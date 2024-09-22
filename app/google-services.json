@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "413480701831",
+    "firebase_url": "https://damperapp-default-rtdb.firebaseio.com",
+    "project_id": "damperapp",
+    "storage_bucket": "damperapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:413480701831:android:84a9e1b518ff383e884d22",
+        "android_client_info": {
+          "package_name": "com.lucas.damper"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcUIKFDL8CUuqL17hCw7PUTgIpWvtjfA4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
