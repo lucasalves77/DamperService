@@ -2,14 +2,16 @@
 
 <p>O Aplicativo de Serviços Locais é uma plataforma para conectar usuários a prestadores de serviços locais. Ele permite que os usuários naveguem, criem e agendem serviços, como reparos domésticos, limpeza e outros serviços personalizados na sua área. O app oferece suporte tanto para clientes quanto para prestadores, com funcionalidades como chat em tempo real, gerenciamento de serviços e avaliações dos usuários.</p>
 
+<h2>Imagens das telas do app</h2>
+
 <table>
     <tr>
-        <td><img src="https://raw.githubusercontent.com/lucasalves77/imagens/refs/heads/main/Splash.jpg?token=GHSAT0AAAAAACX34OBWH67RM6KB45BMAIICZXR3Z6A" alt="Tela Inicial do App" style="width: 100%; height: auto;"></td>
-        <td><img src="https://raw.githubusercontent.com/lucasalves77/APP-NOTES/refs/heads/main/Screenshot_2024-09-23-16-33-11-615_com.lucas.damper.jpg" alt="Tela Inicial do App" style="width: 100%; height: auto;"></td>
+        <td><img src="https://github.com/lucasalves77/imagens/blob/main/Home.jpg" alt="Tela Inicial do App" style="width: 100%; height: auto;"></td>
+        <td><img src="https://github.com/lucasalves77/imagens/blob/main/Search.jpg" alt="Tela Inicial do App" style="width: 100%; height: auto;"></td>
     </tr>
     <tr>
-        <td><img src="https://raw.githubusercontent.com/lucasalves77/APP-NOTES/refs/heads/main/Screenshot_2024-09-23-16-33-11-615_com.lucas.damper.jpg" alt="Tela Inicial do App" style="width: 100%; height: auto;"></td>
-        <td><img src="https://raw.githubusercontent.com/lucasalves77/APP-NOTES/refs/heads/main/Screenshot_2024-09-23-16-33-11-615_com.lucas.damper.jpg" alt="Tela Inicial do App" style="width: 100%; height: auto;"></td>
+        <td><img src="https://github.com/lucasalves77/imagens/blob/main/Login.jpg" alt="Tela Inicial do App" style="width: 100%; height: auto;"></td>
+        <td><img src="https://github.com/lucasalves77/imagens/blob/main/Account.jpg" alt="Tela Inicial do App" style="width: 100%; height: auto;"></td>
     </tr>
 </table>
 
@@ -104,14 +106,23 @@ cd aplicativo-servicos-locais
 
 <table>
     <tr>
-        <td><img src="https://raw.githubusercontent.com/lucasalves77/APP-NOTES/refs/heads/main/Screenshot_2024-09-23-16-33-11-615_com.lucas.damper.jpg" alt="Tela Inicial do App" style="width: 100%; height: auto;"></td>
-        <td><img src="https://raw.githubusercontent.com/lucasalves77/APP-NOTES/refs/heads/main/Screenshot_2024-09-23-16-33-11-615_com.lucas.damper.jpg" alt="Tela Inicial do App" style="width: 100%; height: auto;"></td>
+        <td><img src="https://github.com/lucasalves77/imagens/blob/main/Splash.jpg" alt="Tela Inicial do App" style="width: 100%; height: auto;"></td>
+        <td><img src="https://github.com/lucasalves77/imagens/blob/main/Onboarding1.jpg" alt="Tela Inicial do App" style="width: 100%; height: auto;"></td>
     </tr>
     <tr>
-        <td><img src="https://raw.githubusercontent.com/lucasalves77/APP-NOTES/refs/heads/main/Screenshot_2024-09-23-16-33-11-615_com.lucas.damper.jpg" alt="Tela Inicial do App" style="width: 100%; height: auto;"></td>
-        <td><img src="https://raw.githubusercontent.com/lucasalves77/APP-NOTES/refs/heads/main/Screenshot_2024-09-23-16-33-11-615_com.lucas.damper.jpg" alt="Tela Inicial do App" style="width: 100%; height: auto;"></td>
+        <td><img src="https://github.com/lucasalves77/imagens/blob/main/Onboarding2.jpg" alt="Tela Inicial do App" style="width: 100%; height: auto;"></td>
+        <td><img src="https://github.com/lucasalves77/imagens/blob/main/Onboarding3.jpg" alt="Tela Inicial do App" style="width: 100%; height: auto;"></td>
+    </tr>
+    <tr>
+        <td><img src="https://github.com/lucasalves77/imagens/blob/main/Login.jpg" alt="Tela Inicial do App" style="width: 100%; height: auto;"></td>
+        <td><img src="https://github.com/lucasalves77/imagens/blob/main/Home.jpg" alt="Tela Inicial do App" style="width: 100%; height: auto;"></td>
+    </tr>
+    <tr>
+        <td><img src="https://github.com/lucasalves77/imagens/blob/main/Search.jpg" alt="Tela Inicial do App" style="width: 100%; height: auto;"></td>
+        <td><img src="https://github.com/lucasalves77/imagens/blob/main/Account.jpg" alt="Tela Inicial do App" style="width: 100%; height: auto;"></td>
     </tr>
 </table>
+
 
 <h2>Licença</h2>
 <p>Este projeto está licenciado sob a Licença MIT. Consulte o arquivo <code>LICENSE</code> para mais detalhes.</p>
