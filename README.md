@@ -13,6 +13,8 @@
     </tr>
 </table>
 
+<p><a href="#mais-imagens">Ver mais imagens</a></p>
+
 <h2>Funcionalidades</h2>
 <ul>
     <li><strong>Autenticação de Usuário:</strong> Login e registro seguros usando Firebase Authentication.</li>
@@ -97,6 +99,19 @@ cd aplicativo-servicos-locais
     <li>Faça o push para a branch (<code>git push origin feature/sua-feature</code>).</li>
     <li>Abra um Pull Request.</li>
 </ol>
+
+<h2 id="mais-imagens">Mais Imagens</h2>
+
+<table>
+    <tr>
+        <td><img src="https://raw.githubusercontent.com/lucasalves77/APP-NOTES/refs/heads/main/Screenshot_2024-09-23-16-33-11-615_com.lucas.damper.jpg" alt="Tela Inicial do App" style="width: 100%; height: auto;"></td>
+        <td><img src="https://raw.githubusercontent.com/lucasalves77/APP-NOTES/refs/heads/main/Screenshot_2024-09-23-16-33-11-615_com.lucas.damper.jpg" alt="Tela Inicial do App" style="width: 100%; height: auto;"></td>
+    </tr>
+    <tr>
+        <td><img src="https://raw.githubusercontent.com/lucasalves77/APP-NOTES/refs/heads/main/Screenshot_2024-09-23-16-33-11-615_com.lucas.damper.jpg" alt="Tela Inicial do App" style="width: 100%; height: auto;"></td>
+        <td><img src="https://raw.githubusercontent.com/lucasalves77/APP-NOTES/refs/heads/main/Screenshot_2024-09-23-16-33-11-615_com.lucas.damper.jpg" alt="Tela Inicial do App" style="width: 100%; height: auto;"></td>
+    </tr>
+</table>
 
 <h2>Licença</h2>
 <p>Este projeto está licenciado sob a Licença MIT. Consulte o arquivo <code>LICENSE</code> para mais detalhes.</p>
