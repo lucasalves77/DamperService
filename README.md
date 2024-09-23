@@ -4,7 +4,7 @@
 
 <table>
     <tr>
-        <td><img src="https://raw.githubusercontent.com/lucasalves77/APP-NOTES/refs/heads/main/Screenshot_2024-09-23-16-33-11-615_com.lucas.damper.jpg" alt="Tela Inicial do App" style="width: 100%; height: auto;"></td>
+        <td><img src="https://raw.githubusercontent.com/lucasalves77/imagens/refs/heads/main/Splash.jpg?token=GHSAT0AAAAAACX34OBWH67RM6KB45BMAIICZXR3Z6A" alt="Tela Inicial do App" style="width: 100%; height: auto;"></td>
         <td><img src="https://raw.githubusercontent.com/lucasalves77/APP-NOTES/refs/heads/main/Screenshot_2024-09-23-16-33-11-615_com.lucas.damper.jpg" alt="Tela Inicial do App" style="width: 100%; height: auto;"></td>
     </tr>
     <tr>
