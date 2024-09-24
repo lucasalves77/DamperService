@@ -6,12 +6,12 @@
 
 <table>
     <tr>
-        <td><img src="https://github.com/lucasalves77/imagens/blob/main/Home.jpg" alt="Tela Inicial do App" style="width: 100%; height: auto;"></td>
-        <td><img src="https://github.com/lucasalves77/imagens/blob/main/Search.jpg" alt="Tela Inicial do App" style="width: 100%; height: auto;"></td>
+        <td><img src="https://www.dropbox.com/scl/fi/072eqqzchklhtbat4srlu/Home.jpg?rlkey=uwf1u9cy6jbewj1y1396aj1oi&raw=1" alt="Tela Home do App" style="width: 100%; height: auto;"></td>
+        <td><img src="https://www.dropbox.com/scl/fi/3ot4itx0cshdqcck4sfxh/Search.jpg?rlkey=2s5wg0elcejkfp57u4ddmnqw3&raw=1" alt="Tela Inicial do App" style="width: 100%; height: auto;"></td>
     </tr>
     <tr>
-        <td><img src="https://github.com/lucasalves77/imagens/blob/main/Login.jpg" alt="Tela Inicial do App" style="width: 100%; height: auto;"></td>
-        <td><img src="https://github.com/lucasalves77/imagens/blob/main/Account.jpg" alt="Tela Inicial do App" style="width: 100%; height: auto;"></td>
+        <td><img src="https://www.dropbox.com/scl/fi/w2iyrq80fpfgerkum3pxo/Login.jpg?rlkey=g73pkqfwjk8mp679s6awpv01r&raw=1" alt="Tela de Login do App" style="width: 100%; height: auto;"></td>
+        <td><img src="https://www.dropbox.com/scl/fi/8i2e2nxhv767pevtmpeth/Account.jpg?rlkey=cl9z993t21fjvz5t1yxu3s3pb&raw=1" alt="Tela de Conta do App" style="width: 100%; height: auto;"></td>
     </tr>
 </table>
 
@@ -54,8 +54,7 @@
 <h3>Clonar o Repositório</h3>
 <pre>
 <code>
-git clone https://github.com/seu-usuario/aplicativo-servicos-locais.git
-cd aplicativo-servicos-locais
+https://github.com/lucasalves77/DamperService.git
 </code>
 </pre>
 
@@ -103,26 +102,24 @@ cd aplicativo-servicos-locais
 </ol>
 
 <h2 id="mais-imagens">Mais Imagens</h2>
-
 <table>
-    <tr>
-        <td><img src="https://github.com/lucasalves77/imagens/blob/main/Splash.jpg" alt="Tela Inicial do App" style="width: 100%; height: auto;"></td>
-        <td><img src="https://github.com/lucasalves77/imagens/blob/main/Onboarding1.jpg" alt="Tela Inicial do App" style="width: 100%; height: auto;"></td>
+     <tr>
+        <td><img src="https://www.dropbox.com/scl/fi/e6ue71w5nk28v4ikqxmx0/Splash.jpg?rlkey=sb5j3v8nft9pp241y9xg82gbw&raw=1" alt="Tela Splash do App" style="width: 100%; height: auto;"></td>
+        <td><img src="https://www.dropbox.com/scl/fi/cr16eq96dibi1yq9qryza/Onboarding1.jpg?rlkey=38kovvvcuw23t0amm3gvtx433&raw=1" alt="Tela de Onboarding 1 do App" style="width: 100%; height: auto;"></td>
     </tr>
     <tr>
-        <td><img src="https://github.com/lucasalves77/imagens/blob/main/Onboarding2.jpg" alt="Tela Inicial do App" style="width: 100%; height: auto;"></td>
-        <td><img src="https://github.com/lucasalves77/imagens/blob/main/Onboarding3.jpg" alt="Tela Inicial do App" style="width: 100%; height: auto;"></td>
+        <td><img src="https://www.dropbox.com/scl/fi/nu9aml7rcwrqc3g6dmxvc/Onboarding2.jpg?rlkey=feg63xot6190epcxapq9mbhau&raw=1" alt="Tela de Onboarding 2 do App" style="width: 100%; height: auto;"></td>
+        <td><img src="https://www.dropbox.com/scl/fi/pjljw5zanfwji4d21e0ae/Onboarding3.jpg?rlkey=175hxzhxsmk3fp9t1ts3wq9py&raw=1" style="width: 100%; height: auto;"></td>
     </tr>
     <tr>
-        <td><img src="https://github.com/lucasalves77/imagens/blob/main/Login.jpg" alt="Tela Inicial do App" style="width: 100%; height: auto;"></td>
-        <td><img src="https://github.com/lucasalves77/imagens/blob/main/Home.jpg" alt="Tela Inicial do App" style="width: 100%; height: auto;"></td>
+        <td><img src="https://www.dropbox.com/scl/fi/w2iyrq80fpfgerkum3pxo/Login.jpg?rlkey=g73pkqfwjk8mp679s6awpv01r&raw=1" alt="Tela de Login do App" style="width: 100%; height: auto;"></td>
+        <td><img src="https://www.dropbox.com/scl/fi/072eqqzchklhtbat4srlu/Home.jpg?rlkey=uwf1u9cy6jbewj1y1396aj1oi&raw=1" alt="Tela Home do App" style="width: 100%; height: auto;"></td>
     </tr>
     <tr>
-        <td><img src="https://github.com/lucasalves77/imagens/blob/main/Search.jpg" alt="Tela Inicial do App" style="width: 100%; height: auto;"></td>
-        <td><img src="https://github.com/lucasalves77/imagens/blob/main/Account.jpg" alt="Tela Inicial do App" style="width: 100%; height: auto;"></td>
+        <td><img src="https://www.dropbox.com/scl/fi/3ot4itx0cshdqcck4sfxh/Search.jpg?rlkey=2s5wg0elcejkfp57u4ddmnqw3&raw=1" alt="Tela Inicial do App" style="width: 100%; height: auto;"></td>
+        <td><img src="https://www.dropbox.com/scl/fi/8i2e2nxhv767pevtmpeth/Account.jpg?rlkey=cl9z993t21fjvz5t1yxu3s3pb&raw=1" alt="Tela de Conta do App" style="width: 100%; height: auto;"></td>
     </tr>
 </table>
-
 
 <h2>Licença</h2>
 <p>Este projeto está licenciado sob a Licença MIT. Consulte o arquivo <code>LICENSE</code> para mais detalhes.</p>
