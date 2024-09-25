@@ -1,5 +1,6 @@
 package com.lucas.damper
 
+import BarraSearch
 import android.annotation.SuppressLint
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -14,12 +15,12 @@ import com.lucas.damper.ui.theme.GrayScale900
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun SearchScreen(navController: NavHostController) {
+fun SearchScreen(navController: NavHostController, authViewModel: AuthViewModel) {
 
     LazyColumn(modifier = Modifier
             .background(GrayScale900)
             .fillMaxSize(),
-        contentPadding = PaddingValues(start = 20.dp, end = 20.dp),
+        contentPadding = PaddingValues(start = 20.dp, end = 20.dp, top = 20.dp),
     ) {
         item {
             TopBar(navController)

@@ -1,16 +1,10 @@
-package com.lucas.damper
-
 import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
-import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.Text
-import androidx.compose.material3.TextFieldDefaults
+import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -25,14 +19,13 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
-import com.lucas.damper.ui.theme.GrayScale400
-import com.lucas.damper.ui.theme.GrayScale700
-import com.lucas.damper.ui.theme.azul300
-import com.lucas.damper.ui.theme.azulOpacityInput
 import com.lucas.damper.R
-import com.lucas.damper.ui.theme.GrayScale300
+import com.lucas.damper.ui.theme.GrayScale400
 import com.lucas.damper.ui.theme.GrayScale500
+import com.lucas.damper.ui.theme.GrayScale300
 import com.lucas.damper.ui.theme.GrayScale800
+import com.lucas.damper.ui.theme.GrayScale900
+import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -40,7 +33,11 @@ fun BarraSearch() {
     var text by remember { mutableStateOf("") }
     val focusManager = LocalFocusManager.current
     var isFocusedSearch by remember { mutableStateOf(false) }
-    val azulOpacity = azulOpacityInput.copy(alpha = 0.2f)
+    var openBottomSheet by remember { mutableStateOf(false) } // Controla a exibição do modal
+    val bottomSheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true) // Sem initialValue
+    val scope = rememberCoroutineScope()
+
+    val azulOpacity = Color(0xFF0099FF).copy(alpha = 0.2f)
 
     Box(
         modifier = Modifier
@@ -53,8 +50,8 @@ fun BarraSearch() {
         OutlinedTextField(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding( top = 10.dp)
-                .height(60.dp)
+                .padding(top = 10.dp)
+                .height(70.dp)
                 .clip(RoundedCornerShape(30.dp))
                 .onFocusChanged { focusState ->
                     isFocusedSearch = focusState.isFocused
@@ -74,7 +71,7 @@ fun BarraSearch() {
             },
             shape = RoundedCornerShape(30.dp),
             colors = TextFieldDefaults.outlinedTextFieldColors(
-                focusedBorderColor = azul300,
+                focusedBorderColor = Color(0xFF0099FF),
                 unfocusedBorderColor = Color.Transparent,
             ),
             singleLine = true,
@@ -96,16 +93,13 @@ fun BarraSearch() {
             trailingIcon = {
                 Box(
                     modifier = Modifier
-                        .height(24.dp) // Ajuste a altura conforme necessário
-                        .width(60.dp) // Ajuste a largura conforme necessário
-                        .background(Color.Transparent) // Fundo transparente para o Box
+                        .height(24.dp)
+                        .width(60.dp)
+                        .background(Color.Transparent)
                 ) {
                     Row(
-                        modifier = Modifier
-
-                            .fillMaxHeight()
+                        modifier = Modifier.fillMaxHeight()
                     ) {
-                        // Divider
                         Box(
                             modifier = Modifier
                                 .width(1.dp)
@@ -113,20 +107,58 @@ fun BarraSearch() {
                                 .background(Color.Gray)
                         )
 
-                        // Espaço entre Divider e ícone
                         Spacer(modifier = Modifier.width(12.dp))
 
-                        // Ícone
-                        Icon(modifier = Modifier
-                            .size(20.dp)
-                            .align(Alignment.CenterVertically),
-                            painter = painterResource(id = R.drawable.filtroicon),
-                            contentDescription = null,
-                            tint = GrayScale500
-                        )
+                        IconButton(onClick = {
+                            scope.launch {
+                                bottomSheetState.show() // Abre o modal
+                                openBottomSheet = true
+                            }
+                        }) {
+                            Icon(
+                                painter = painterResource(id = R.drawable.filtroicon),
+                                contentDescription = null,
+                                tint = GrayScale500
+                            )
+                        }
                     }
                 }
             }
         )
+
+        // ModalBottomSheet é exibido aqui
+        if (openBottomSheet) {
+            ModalBottomSheet(
+                onDismissRequest = {
+                    scope.launch {
+                        bottomSheetState.hide()
+                        openBottomSheet = false
+                    }
+                },
+                sheetState = bottomSheetState,
+                containerColor = GrayScale900,
+                scrimColor = Color.Black.copy(alpha = 0.7f)
+            ) {
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(16.dp)
+                ) {
+                    Text(
+                        text = "Filtro",
+                        style = MaterialTheme.typography.headlineMedium
+                    )
+
+                    Button(onClick = {
+                        scope.launch {
+                            bottomSheetState.hide()
+                            openBottomSheet = false
+                        }
+                    }) {
+                        Text(text = "Fechar")
+                    }
+                }
+            }
+        }
     }
 }

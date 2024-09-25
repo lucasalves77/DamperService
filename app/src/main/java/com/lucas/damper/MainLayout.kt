@@ -56,7 +56,7 @@ fun MainLayout(navController: NavHostController,authViewModel: AuthViewModel) {
         ) {
             composable("splash") { SplashScreen(navController,authViewModel) }
             composable("home") { HomeScreen(navController) }
-            composable("search") { SearchScreen(navController) }
+            composable("search") { SearchScreen(navController,authViewModel) }
             composable("mensagem") { chatMessage(navController) }
             composable("profile") { ProfileScreen(navController,authViewModel) }
             composable("onboarding_one") { OnboardingOneScreen(navController) }

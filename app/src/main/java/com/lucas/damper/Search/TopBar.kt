@@ -25,7 +25,6 @@ import com.lucas.damper.ui.theme.azul200
 fun TopBar(navController: NavController) {
     Row(
         modifier = Modifier
-            .height(100.dp)
             .fillMaxWidth(),
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically
