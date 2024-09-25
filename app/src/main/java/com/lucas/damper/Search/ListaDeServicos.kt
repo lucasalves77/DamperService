@@ -19,17 +19,14 @@ fun ListService(){
             description = "Includes dusting, vacuuming, etc.",
             location = "Brooklyn, NY",
             priceRange = "$100 - $200",
-            imageResource = R.drawable.imageonbording1
+            imageResource = R.drawable.onboardingone
         ),
         // Adicione mais ServiceItem aqui
     )
 
     Column(){
 
-
-            Text(text = "Limpeza")
-
-
+        Text(text = "Limpeza")
 
         CardServiceList(serviceItems = services)
 

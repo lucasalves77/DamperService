@@ -217,7 +217,11 @@ fun SignupScreen(navController: NavHostController, authViewModel: AuthViewModel,
                 fontFamily = FontFamily(Font(R.font.plusjakartasans_medium))
             )
 
-            Row {
+            Row(modifier = Modifier
+                    .fillMaxWidth()
+                    .align(Alignment.CenterHorizontally),
+                horizontalArrangement = Arrangement.Center
+            ){
                 val termsConditions = buildAnnotatedString {
                     withStyle(style = SpanStyle(
                         color = azul300,
@@ -272,6 +276,47 @@ fun SignupScreen(navController: NavHostController, authViewModel: AuthViewModel,
                             .firstOrNull()
                             ?.let {
                                 navController.navigate("signup")
+                            }
+                    }
+                )
+            }
+
+            Row(
+                modifier = Modifier
+                    .padding(top = 40.dp)
+                    .fillMaxWidth()
+                    .align(Alignment.CenterHorizontally),
+                horizontalArrangement = Arrangement.Center
+            ) {
+                Text(
+                    modifier = Modifier
+                        .align(Alignment.CenterVertically),
+                    text = "Já tem uma conta?",
+                    color = GrayScale0,
+                    fontSize = 14.sp,
+                    fontWeight = FontWeight.Normal,
+                    fontFamily = FontFamily(Font(R.font.plusjakartasans_medium))
+                )
+
+                Spacer(modifier = Modifier.width(10.dp))
+                val text = buildAnnotatedString {
+                    withStyle(style = SpanStyle(
+                        color = azul300,
+                        fontSize = 14.sp,
+                        fontWeight = FontWeight.Bold,
+                        fontFamily = FontFamily(Font(R.font.plusjakartasans_bold)))) {
+                        pushStringAnnotation(tag = "login", annotation = "Navigate to Detail Screen")
+                        append("Login")
+                        pop()
+                    }
+                }
+                ClickableText(
+                    text = text,
+                    onClick = { offset ->
+                        text.getStringAnnotations(tag = "login", start = offset, end = offset)
+                            .firstOrNull()
+                            ?.let {
+                                navController.navigate("login")
                             }
                     }
                 )

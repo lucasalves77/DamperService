@@ -61,8 +61,10 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalFocusManager
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight.Companion.Bold
 import androidx.compose.ui.text.input.ImeAction
 import androidx.navigation.NavHostController
@@ -71,6 +73,7 @@ import com.lucas.damper.AuthViewModel
 import com.lucas.damper.R
 import com.lucas.damper.ServicosRow
 import com.lucas.damper.ui.theme.GrayScale0
+import com.lucas.damper.ui.theme.GrayScale300
 import com.lucas.damper.ui.theme.GrayScale400
 import com.lucas.damper.ui.theme.GrayScale900
 
@@ -82,7 +85,7 @@ fun HomeScreen(navController: NavHostController) {
         modifier = Modifier
             .fillMaxSize()
             .background(GrayScale900),
-        contentPadding = PaddingValues(top = 20.dp), // Adiciona espaçamento entre os itens
+        contentPadding = PaddingValues(top = 20.dp, start = 20.dp, end = 20.dp), // Adiciona espaçamento entre os itens
     ) {
         item {
             header()
@@ -101,7 +104,6 @@ fun header(){
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier
             .fillMaxWidth()
-            .padding(start = 20.dp, end = 20.dp)
     ) {
 
         // FOTO DE PERFIL
@@ -174,6 +176,7 @@ fun BarraPesquisa() {
 
     Box(
         modifier = Modifier
+            .padding(top = 24.dp)
             .fillMaxSize()
             .pointerInput(Unit) {
                 detectTapGestures(onTap = {
@@ -185,8 +188,7 @@ fun BarraPesquisa() {
         OutlinedTextField(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(start = 20.dp, end = 20.dp, top = 24.dp)
-                .height(60.dp)
+                .height(70.dp)
                 .clip(RoundedCornerShape(16.dp))
                 .onFocusChanged { focusState ->
                     isFocusedSearch = focusState.isFocused
@@ -195,8 +197,13 @@ fun BarraPesquisa() {
                     if (isFocusedSearch) azulOpacity else GrayScale800
                 ),
             value = text,
+            textStyle = TextStyle(fontSize = 16.sp),
             onValueChange = { newText -> text = newText },
-            placeholder = { Text(text = "Digite seu email") },
+            placeholder = {
+                Text(
+                    text = "Como podemos ajudá-lo hoje?",
+                    fontSize = 16.sp
+            ) },
             shape = RoundedCornerShape(16.dp),
             colors = TextFieldDefaults.outlinedTextFieldColors(
                 focusedBorderColor = azul300,
@@ -208,7 +215,16 @@ fun BarraPesquisa() {
             ),
             keyboardActions = KeyboardActions(
                 onDone = { focusManager.clearFocus() } // Esconde o teclado ao clicar em "Done"
-            )
+            ),
+            leadingIcon = {
+                Icon(
+                    modifier = Modifier
+                        .padding(start = 20.dp, end = 10.dp),
+                    painter = painterResource(id = R.drawable.searchicon),
+                    contentDescription = null,
+                    tint = GrayScale300
+                )
+            },
         )
 
         // Conteúdo adicional abaixo da barra de pesquisa
@@ -232,17 +248,17 @@ fun ServicosHomeCategory() {
     val azulOpacity = azul300.copy(alpha = 0.2f)
     val interactionSource = remember { MutableInteractionSource() }
     val menuItems = listOf(
-        MenuItem(R.drawable.limpezaicon) { selectedIndex = 0 },
-        MenuItem(R.drawable.contrucaoicon) { selectedIndex = 1 },
-        MenuItem(R.drawable.culinariaicon) { selectedIndex = 2 },
-        MenuItem(R.drawable.envioicon) { selectedIndex = 3 }
+        MenuItem(R.drawable.limpezaicon, "") { selectedIndex = 0 },
+        MenuItem(R.drawable.contrucaoicon, "") { selectedIndex = 1 },
+        MenuItem(R.drawable.culinariaicon, "") { selectedIndex = 2 },
+        MenuItem(R.drawable.envioicon, "") { selectedIndex = 3 }
     )
 
     val labels = listOf("Limpeza", "Construção", "Culinária", "Envio")
 
     Column(
         modifier = Modifier
-            .padding(start = 20.dp, end = 20.dp, top = 32.dp, bottom = 24.dp)
+            .padding(top = 32.dp, bottom = 24.dp)
     ) {
         Row(
             horizontalArrangement = Arrangement.SpaceBetween,
@@ -327,8 +343,6 @@ fun ServicosHomeCategory() {
 fun SpecialOferts(){
     Column(modifier = Modifier
         .fillMaxWidth()
-        .padding(start = 20.dp, end = 20.dp)
-
     ) {
         Row(
             horizontalArrangement = Arrangement.SpaceBetween,
@@ -372,7 +386,7 @@ fun ServicosHome() {
 
     Column(
         modifier = Modifier
-            .padding(start = 20.dp, end = 20.dp, top = 32.dp, bottom = 24.dp)
+            .padding( top = 32.dp, bottom = 24.dp)
     ) {
         Row(
             horizontalArrangement = Arrangement.SpaceBetween,
@@ -407,7 +421,7 @@ fun ServicosHome() {
                 description = "Includes dusting, vacuuming, etc.",
                 location = "Brooklyn, NY",
                 priceRange = "$100 - $200",
-                imageResource = R.drawable.imageonbording1
+                imageResource = R.drawable.onboardingone
             ),
             // Adicione mais ServiceItem aqui
         )
@@ -451,7 +465,8 @@ fun CardService(
                     .clip(RoundedCornerShape(16.dp))
                     .background(azul300),
                 painter = painterResource(id = imageResource),
-                contentDescription = null
+                contentDescription = null,
+                contentScale = ContentScale.Crop
             )
 
             Column(

@@ -30,11 +30,13 @@ import com.lucas.damper.ui.theme.GrayScale900
 import com.lucas.damper.ui.theme.azul300
 
 
-data class MenuItem(val iconId: Int, val onClick: () -> Unit)
+data class MenuItem(val iconId: Int, val route: String, val onClick: () -> Unit)
 
 @Composable
 fun Menu(navController: NavHostController) {
     var selectedIndex by remember { mutableStateOf(0) }
+
+    val currentRoute = navController.currentDestination?.route
 
     Row(
         modifier = Modifier
@@ -45,23 +47,23 @@ fun Menu(navController: NavHostController) {
         verticalAlignment = Alignment.CenterVertically
     ) {
         val menuItems = listOf(
-            MenuItem(R.drawable.homeicon) {
+            MenuItem(R.drawable.homeicon, "home") {
                 selectedIndex = 0
                 navigateToHome(navController, authViewModel = AuthViewModel()) // Chama a função de navegação para Home
             },
-            MenuItem(R.drawable.searchicon) {
+            MenuItem(R.drawable.searchicon, "search") {
                 selectedIndex = 1
                 navigateToSearch(navController)
             },
-            MenuItem(R.drawable.calendaricon) {
+            MenuItem(R.drawable.calendaricon, "calendar") {
                 selectedIndex = 2
                 openCalendar(navController)
             },
-            MenuItem(R.drawable.messageicon) {
+            MenuItem(R.drawable.messageicon, "menssagens") {
                 selectedIndex = 3
                 openMessages(navController)
             },
-            MenuItem(R.drawable.usericon) {
+            MenuItem(R.drawable.usericon, "profile") {
                 selectedIndex = 4
                 openUserProfile(navController)
             }
@@ -78,7 +80,7 @@ fun Menu(navController: NavHostController) {
                     modifier = Modifier.size(30.dp),
                     painter = painterResource(id = item.iconId),
                     contentDescription = null,
-                    tint = if (index == 2) GrayScale0 else if (index == selectedIndex) GrayScale0 else GrayScale500
+                    tint = if (index==2) GrayScale0 else if (item.route == currentRoute) GrayScale0 else GrayScale500
                 )
             }
         }

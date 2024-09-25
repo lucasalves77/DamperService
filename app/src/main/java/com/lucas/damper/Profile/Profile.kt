@@ -77,7 +77,7 @@ fun ProfileScreen(navController: NavHostController, authViewModel: AuthViewModel
 
         listaServicosDomesticos(navController = navController)
 
-        ModalLogout(authViewModel)
+        ModalLogout(navController, authViewModel)
 
     }
 }

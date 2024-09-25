@@ -17,11 +17,12 @@ import com.lucas.damper.ui.theme.GrayScale900
 fun SearchScreen(navController: NavHostController) {
 
     LazyColumn(modifier = Modifier
-        .background(GrayScale900)
-        .fillMaxSize()
+            .background(GrayScale900)
+            .fillMaxSize(),
+        contentPadding = PaddingValues(start = 20.dp, end = 20.dp),
     ) {
         item {
-            TopBar()
+            TopBar(navController)
         }
 
         item {

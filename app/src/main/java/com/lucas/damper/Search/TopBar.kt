@@ -16,16 +16,16 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.lucas.damper.ui.theme.GrayScale0
 import com.lucas.damper.ui.theme.GrayScale800
 import com.lucas.damper.ui.theme.azul200
 
 @Composable
-fun TopBar() {
+fun TopBar(navController: NavController) {
     Row(
         modifier = Modifier
             .height(100.dp)
-            .padding(start = 20.dp, end = 20.dp)
             .fillMaxWidth(),
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically
@@ -35,7 +35,7 @@ fun TopBar() {
                 .size(60.dp)
                 .clip(CircleShape)
                 .background(GrayScale800),
-            onClick = {}
+            onClick = { navController.navigate("home") }
         ) {
             Icon(
                 painter = painterResource(id = R.drawable.arrowicon),

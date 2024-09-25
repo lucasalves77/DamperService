@@ -6,6 +6,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.ClickableText
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Scaffold
@@ -15,16 +16,21 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.lucas.damper.ui.theme.DamperTheme
 import com.lucas.damper.ui.theme.GrayScale0
+import com.lucas.damper.ui.theme.GrayScale400
 import com.lucas.damper.ui.theme.GrayScale700
 import com.lucas.damper.ui.theme.GrayScale900
 import com.lucas.damper.ui.theme.azul100
@@ -33,6 +39,20 @@ import com.lucas.damper.ui.theme.azul300
 
 @Composable
 fun OnboardingOneScreen(navController: NavController, modifier: Modifier = Modifier) {
+
+    val text = buildAnnotatedString {
+        withStyle(style = SpanStyle(
+            color = GrayScale0,
+            fontSize = 18.sp,
+            fontWeight = FontWeight.Bold,
+            fontFamily = FontFamily(Font(R.font.plusjakartasans_bold)))
+        ) {
+            pushStringAnnotation(tag = "login", annotation = "Navigate to Detail Screen")
+            append("Skip")
+            pop()
+        }
+    }
+
     Column(modifier = modifier
         .fillMaxSize()
         .background(azul300)) {
@@ -60,11 +80,26 @@ fun OnboardingOneScreen(navController: NavController, modifier: Modifier = Modif
 
             // Imagem sobreposta
             Image(
-                painter = painterResource(id = R.drawable.imageonbording1),
+                painter = painterResource(id = R.drawable.onboardingone),
                 contentDescription = null,
                 modifier = Modifier
-                    .padding(top = 80.dp)
                     .size(500.dp)
+                    .align(Alignment.BottomCenter),
+                contentScale = ContentScale.Crop
+            )
+
+            ClickableText(
+                modifier = Modifier
+                    .padding(top = 60.dp, end = 40.dp)
+                    .align(alignment = Alignment.TopEnd),
+                text = text,
+                onClick = { offset ->
+                    text.getStringAnnotations(tag = "login", start = offset, end = offset)
+                        .firstOrNull()
+                        ?.let {
+                            navController.navigate("login")
+                        }
+                }
             )
         }
 
@@ -85,7 +120,7 @@ fun OnboardingOneScreen(navController: NavController, modifier: Modifier = Modif
                     color = Color.White,
                     fontWeight = FontWeight.Bold,
                     fontFamily = FontFamily(Font(R.font.plusjakartasans_bold)),
-                    fontSize = 32.sp,
+                    fontSize = 28.sp,
                     lineHeight = 40.sp,
                     textAlign = TextAlign.Center
                 )
@@ -97,13 +132,15 @@ fun OnboardingOneScreen(navController: NavController, modifier: Modifier = Modif
                     fontWeight = FontWeight.Normal,
                     fontFamily = FontFamily(Font(R.font.plusjakartasans_medium)),
                     lineHeight = 25.sp,
+                    fontSize = 16.sp,
                     textAlign = TextAlign.Center,
+                    color = GrayScale400,
                     text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
                 )
 
                 Row(
                     modifier = Modifier
-                        .padding(top = 40.dp)
+                        .padding(top = 30.dp)
                         .fillMaxWidth()
                         .align(Alignment.CenterHorizontally),
                     horizontalArrangement = Arrangement.Center

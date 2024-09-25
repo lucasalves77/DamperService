@@ -111,18 +111,14 @@ fun LoginScreen(
                     .fillMaxSize(),
                 value = email,
                 onValueChange = { email = it },
+                singleLine = true,
                 placeholder = {
-                    Box(modifier = Modifier
-                        .fillMaxSize()
-                        .wrapContentSize(Alignment.CenterStart)
-                    ){
-                        Text(
-                            text = "Digite seu email",
-                            style = TextStyle(fontSize = 16.sp, color = GrayScale400),
-                        )
-                    }
-
+                    Text(
+                        text = "Digite seu email",
+                        style = TextStyle(fontSize = 16.sp, color = GrayScale400),
+                    )
                 },
+                textStyle = TextStyle(fontSize = 16.sp),
                 shape = RoundedCornerShape(16.dp),
                 colors = TextFieldDefaults.outlinedTextFieldColors(
                     focusedBorderColor = azul300,
@@ -149,18 +145,14 @@ fun LoginScreen(
                 .onFocusChanged { focusState -> isFocusedSenha = focusState.isFocused },
             value = password,
             onValueChange = { password = it },
+            singleLine = true,
             placeholder = {
-                Box(modifier = Modifier
-                .fillMaxSize()
-                .wrapContentSize(Alignment.CenterStart)
-            ){
                 Text(
                     text = "Digite sua senha",
                     style = TextStyle(fontSize = 16.sp, color = GrayScale400),
                 )
-            }
              },
-            textStyle = TextStyle(fontSize = 24.sp),
+            textStyle = TextStyle(fontSize = 16.sp),
             shape = RoundedCornerShape(16.dp),
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
             visualTransformation = if (passwordVisible) VisualTransformation.None else PasswordVisualTransformation(),
@@ -222,7 +214,7 @@ fun LoginScreen(
             verticalAlignment = Alignment.CenterVertically
         ) {
             Divider(color = GrayScale700, thickness = 1.dp, modifier = Modifier.width(140.dp))
-            Text(color = GrayScale400, text = "Or continue with")
+            Text(color = GrayScale400, text = "Ou continue com")
             Divider(color = GrayScale700, thickness = 1.dp, modifier = Modifier.width(140.dp))
         }
 
@@ -285,7 +277,7 @@ fun LoginScreen(
             Text(
                 modifier = Modifier
                     .align(Alignment.CenterVertically),
-                text = "Don’t have an account?",
+                text = "Já tem uma conta?",
                 color = GrayScale0,
                 fontSize = 14.sp,
                 fontWeight = FontWeight.Normal,

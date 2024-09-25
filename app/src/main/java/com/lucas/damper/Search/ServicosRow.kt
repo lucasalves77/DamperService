@@ -39,7 +39,7 @@ fun ServicosRow(
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(end = 16.dp) // Adiciona um espaço entre os botões
-                    .height(36.dp)
+                    .height(40.dp)
             ) {
                 Text(
                     fontSize = 14.sp,

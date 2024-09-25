@@ -12,12 +12,12 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.samples.ModalLogout
 import com.lucas.damper.AuthViewModel
-import com.lucas.damper.DetailScreen
 import com.lucas.damper.ForgotPasswordScreen
 import com.lucas.damper.Home.HomeScreen
 import com.lucas.damper.LoginScreen
 //import com.lucas.damper.Mensagens.ChatScreen
 import com.lucas.damper.Mensagens.ProfileScreen
+import com.lucas.damper.Mensagens.chatMessage
 import com.lucas.damper.OnboardingOneScreen
 import com.lucas.damper.OnboardingThreeScreen
 import com.lucas.damper.OnboardingTwoScreen
@@ -57,14 +57,14 @@ fun MainLayout(navController: NavHostController,authViewModel: AuthViewModel) {
             composable("splash") { SplashScreen(navController,authViewModel) }
             composable("home") { HomeScreen(navController) }
             composable("search") { SearchScreen(navController) }
-            //composable("mensagem") { ChatScreen(navController) }
+            composable("mensagem") { chatMessage(navController) }
             composable("profile") { ProfileScreen(navController,authViewModel) }
             composable("onboarding_one") { OnboardingOneScreen(navController) }
             composable("onboarding_two") { OnboardingTwoScreen(navController) }
             composable("onboarding_three") { OnboardingThreeScreen(navController) }
             composable("login") { LoginScreen(navController,authViewModel) }
             composable("signup") { SignupScreen(navController,authViewModel) }
-            composable("ModalLogout") { ModalLogout(authViewModel) }
+            composable("ModalLogout") { ModalLogout(navController,authViewModel) }
             composable("forgotpassword") { ForgotPasswordScreen(navController,authViewModel, onPasswordResetSent = { navController.navigate("login") }) }
             composable("dadosPessoais") { dadosPessoais(navController) }
         }

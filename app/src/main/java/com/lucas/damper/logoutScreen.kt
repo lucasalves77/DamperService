@@ -38,6 +38,7 @@ import androidx.compose.ui.text.font.FontWeight.Companion.Medium
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.lucas.damper.AuthViewModel
 import com.lucas.damper.R
 import com.lucas.damper.ui.theme.GrayScale0
@@ -50,7 +51,7 @@ import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ModalLogout(authViewModel: AuthViewModel) {
+fun ModalLogout(navController: NavController, authViewModel: AuthViewModel) {
     var openBottomSheet by rememberSaveable { mutableStateOf(false) }
     var skipPartiallyExpanded by rememberSaveable { mutableStateOf(false) }
     val scope = rememberCoroutineScope()
@@ -153,7 +154,11 @@ fun ModalLogout(authViewModel: AuthViewModel) {
                                 .weight(1f),
                             shape = RoundedCornerShape(16.dp),
                             colors = ButtonDefaults.buttonColors(containerColor = alert100),
-                            onClick = {  authViewModel.signout() }
+                            onClick = {  authViewModel.signout()
+                                navController.navigate("login") {
+                                    popUpTo("home") { inclusive = true }
+                                }
+                            }
                         ) {
                             Text(
                                 color = GrayScale0,

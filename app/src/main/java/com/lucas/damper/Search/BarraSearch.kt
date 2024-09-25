@@ -53,7 +53,7 @@ fun BarraSearch() {
         OutlinedTextField(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(start = 20.dp, end = 20.dp, top = 10.dp)
+                .padding( top = 10.dp)
                 .height(60.dp)
                 .clip(RoundedCornerShape(30.dp))
                 .onFocusChanged { focusState ->
